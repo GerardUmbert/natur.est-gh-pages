@@ -1,0 +1,1 @@
+var e=`/natur.est-gh-pages/assets/meritxell-ekL-cMwg.webp`;export{e as t};
