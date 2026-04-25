@@ -20,30 +20,25 @@
     <script>
       // GitHub Pages SPA: restore path from 404.html redirect
       (function () {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
-        // Also handle ?p= query param redirect
         var search = window.location.search;
         if (search.slice(1, 3) === 'p=') {
           var decoded = search.slice(3).replace(/~and~/g, '&');
           var rest = decoded.split('&q=');
+          var base = '/natur.est-gh-pages';
+          var path = rest[0] || '/';
           history.replaceState(
             null, null,
-            window.location.pathname.split('/').slice(0, 2).join('/') +
-            '/' + rest[0] + (rest[1] ? '?' + rest[1] : '') + window.location.hash
+            base + path + (rest[1] ? '?' + rest[1] : '') + window.location.hash
           );
         }
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-BadeIzfr.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/_plugin-vue_export-helper-S3RvzygF.js">
-    <link rel="modulepreload" crossorigin href="/assets/vue-i18n-BQc8qtHp.js">
-    <link rel="modulepreload" crossorigin href="/assets/ScrollTrigger-BooyWV5v.js">
-    <link rel="modulepreload" crossorigin href="/assets/BrandLogo-B00mCbP5.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-nWkr6oMR.css">
+    <script type="module" crossorigin src="/natur.est-gh-pages/assets/index-DwQzdLcm.js"></script>
+    <link rel="modulepreload" crossorigin href="/natur.est-gh-pages/assets/_plugin-vue_export-helper-S3RvzygF.js">
+    <link rel="modulepreload" crossorigin href="/natur.est-gh-pages/assets/vue-i18n-BQc8qtHp.js">
+    <link rel="modulepreload" crossorigin href="/natur.est-gh-pages/assets/ScrollTrigger-BooyWV5v.js">
+    <link rel="modulepreload" crossorigin href="/natur.est-gh-pages/assets/BrandLogo-B00mCbP5.js">
+    <link rel="stylesheet" crossorigin href="/natur.est-gh-pages/assets/index-nWkr6oMR.css">
   </head>
   <body>
     <div id="app"></div>

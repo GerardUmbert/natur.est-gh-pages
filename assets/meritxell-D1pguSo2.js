@@ -1,1 +1,0 @@
-var e=`/assets/meritxell-ekL-cMwg.webp`;export{e as t};
